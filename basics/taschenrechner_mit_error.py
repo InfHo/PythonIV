@@ -1,4 +1,4 @@
-
+# Taschenrechner der einen Fehler wirft je nachdem ob durch 0 geteilt wird oder durch eine Nicht-Zahl
 def taschenrechner():
     rechenoperation = input("Bitte gib die rechenoperation an:")
     if rechenoperation == "+":
