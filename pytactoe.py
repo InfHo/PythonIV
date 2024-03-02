@@ -1,4 +1,5 @@
-# Version 0.2
+# Version 0.3
+import random as rd
 
 #tictactoefeld = ["_"] * 9
 #                 0   1   2   3   4   5   6   7 
@@ -75,6 +76,18 @@ def Zug(Spieler,Spielfeld):
             print("Es muss eine Zahl sein")
     if Spielfeld[Feld-1]=="_":
         Spielfeld[Feld-1]=Spieler
+
+def Zug_KI(Spieler,feld):
+    while "_" in feld:
+        zufallszahl=rd.randint(0,8)
+        if feld[zufallszahl] == "_":
+            feld[zufallszahl] = Spieler
+            break
+    print("AI hat gezogen!")
+
+
+
+
 # Wohin soll unser Dings?
 # -> 9 Dingse oder jemand gewinnt
 # --> for-Schleife!
@@ -98,6 +111,14 @@ def Zug(Spieler,Spielfeld):
 
 # funktionX()
 # print_feld(tictactoefeld)
+    
+#=================Hauptschleife================================================
+print("\nFeldnummern:")
+print("1|2|3")
+print("4|5|6")
+print("7|8|9")
+print("")
+
 while True:
     #Zug von x
     if not "_" in tictactoefeld:
@@ -109,7 +130,9 @@ while True:
         break
     if not "_" in tictactoefeld:
         break
-    Zug("o",tictactoefeld)
+    
+    # Zug("o",tictactoefeld) # <- 
+    Zug_KI("o",tictactoefeld) # <- AI zieht
     print("________________")
     print_feld(tictactoefeld)
     if check_ob_spieler_gewinnt(tictactoefeld,"o"):
