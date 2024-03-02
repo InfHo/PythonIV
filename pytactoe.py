@@ -1,4 +1,4 @@
-# Version 0.3
+# Version 0.31
 import random as rd
 
 #tictactoefeld = ["_"] * 9
@@ -118,24 +118,25 @@ print("1|2|3")
 print("4|5|6")
 print("7|8|9")
 print("")
-
+Spieler1 = "x"
+Spieler2 = "o"
 while True:
     #Zug von x
     if not "_" in tictactoefeld:
         break
-    Zug("x",tictactoefeld)
+    Zug(Spieler1,tictactoefeld)
     print("________________")
     print_feld(tictactoefeld)
-    if check_ob_spieler_gewinnt(tictactoefeld,"x"):
+    if check_ob_spieler_gewinnt(tictactoefeld,Spieler1):
         break
     if not "_" in tictactoefeld:
         break
     
     # Zug("o",tictactoefeld) # <- 
-    Zug_KI("o",tictactoefeld) # <- AI zieht
+    Zug_KI(Spieler2,tictactoefeld) # <- AI zieht
     print("________________")
     print_feld(tictactoefeld)
-    if check_ob_spieler_gewinnt(tictactoefeld,"o"):
+    if check_ob_spieler_gewinnt(tictactoefeld,Spieler2):
         break
     if not "_" in tictactoefeld:
         break
